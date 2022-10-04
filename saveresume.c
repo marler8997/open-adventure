@@ -11,7 +11,8 @@
 
 #include <stdlib.h>
 #include <string.h>
-#include <editline/readline.h>
+//#include <editline/readline.h>
+#include "readline.h"
 #include <time.h>
 #include <inttypes.h>
 

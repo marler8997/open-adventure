@@ -11,6 +11,7 @@
 #include <signal.h>
 #include <string.h>
 #include <ctype.h>
+#include <strings.h>
 #include "advent.h"
 #include "dungeon.h"
 

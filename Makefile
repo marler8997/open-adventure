@@ -7,9 +7,10 @@ VERS=$(shell sed -n <NEWS '/^[0-9]/s/:.*//p' | head -1)
 .PHONY: debug indent release refresh dist linty html clean
 .PHONY: check coverage
 
-CC?=gcc
-CCFLAGS+=-std=c99 -D_DEFAULT_SOURCE -DVERSION=\"$(VERS)\" -O2 -D_FORTIFY_SOURCE=2 -fstack-protector-all
-LIBS=$(shell pkg-config --libs libedit)
+#CC?=gcc
+CC=zig cc -nostdlib -nostdinc -I/home/marler8997/git/ziglibc/inc/libc -I/home/marler8997/git/ziglibc/inc/posix -I/home/marler8997/git/ziglibc/inc/gnu -L/home/marler8997/git/ziglibc/zig-out/lib
+CCFLAGS+=-std=c99 -D_DEFAULT_SOURCE -DVERSION=\"$(VERS)\" -O2 -D_FORTIFY_SOURCE=2
+LIBS=$(shell pkg-config --libs libedit) -lstart -lcguana
 INC+=$(shell pkg-config --cflags libedit)
 
 # LLVM/Clang on macOS seems to need -ledit flag for linking

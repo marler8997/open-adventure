@@ -13,8 +13,10 @@
 #include <stdarg.h>
 #include <sys/time.h>
 #include <ctype.h>
-#include <editline/readline.h>
+//#include <editline/readline.h>
+#include "readline.h"
 #include <inttypes.h>
+#include <strings.h>
 
 #include "advent.h"
 #include "dungeon.h"
